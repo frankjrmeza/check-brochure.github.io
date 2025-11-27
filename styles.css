@@ -1,3 +1,34 @@
+  section#actores .section-title {
+    margin-bottom: 24px;
+  }
+  section#actores .section-subtitle {
+    margin-bottom: 20px;
+  }
+  section#flujo .section-title {
+    margin-bottom: 15px;
+  }
+  section#flujo .section-subtitle {
+    margin-bottom: 20px;
+  }
+  section#solucion .section-title {
+    margin-bottom: 15px;
+  }
+  section#solucion .section-subtitle {
+    margin-bottom: 10px;
+  }
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
+}
+section#problema {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
 :root{
   --bg-start: #0F9F6C;
   --bg-end: #0B6B57;
@@ -15,32 +46,48 @@
   --radius-lg: 22px;
   --radius-md: 16px;
   --radius-sm: 10px;
-}
-
 *{ box-sizing: border-box; }
+}
 html, body{
   height: 100%;
   scroll-behavior: smooth;
 }
-body{
-  margin: 0;
+  body{
+    margin: 0;
+    padding-top: 1px; /* Ajusta este valor si tu barra es más alta */
   font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   color: var(--text);
   background: radial-gradient(1200px 800px at 10% 10%, #13B67B 0%, transparent 60%) no-repeat,
               linear-gradient(120deg, var(--bg-start), var(--bg-end));
 }
-
 /* Containers and sections */
+
 .container{
   width: min(1100px, 92vw);
   margin: 0 auto;
 }
 
 .section{
+    scroll-margin-top: 72px;
   position: relative;
-  padding-top: 64px;
+    padding-top: 32px;
+  margin-bottom: 10px;
+  min-height: 100vh;
+  align-items: flex-start;
+  padding-top: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1100px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 24px;
+  padding-right: 24px;
 }
-.section-padded{ padding: 96px 0; }
+
 .section-muted{ background: linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.04)); }
 
 .section-title{
@@ -50,7 +97,7 @@ body{
   text-align: center;
 }
 .section-subtitle{
-  margin: 0 auto 36px;
+  margin: 0 auto 1px;
   text-align: center;
   color: var(--muted);
   max-width: 720px;
@@ -58,11 +105,13 @@ body{
 
 /* Header */
 .site-header{
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  width: 100vw;
   z-index: 50;
-    -webkit-backdrop-filter: saturate(160%) blur(10px);
-    backdrop-filter: saturate(160%) blur(10px);
+  -webkit-backdrop-filter: saturate(160%) blur(10px);
+  backdrop-filter: saturate(160%) blur(10px);
   background: rgba(14, 35, 29, 0.35);
   border-bottom: 1px solid rgba(255,255,255,0.08);
 }
@@ -105,10 +154,21 @@ body{
 
 /* Hero */
 .hero{
-  padding-top: 96px;
-  padding-bottom: 96px;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+    padding: 0;
 }
-.hero-inner{ text-align: center; position: relative; }
+.hero-inner{
+  text-align: center;
+  position: relative;
+  width: 100%;
+  max-width: 900px;
+  padding: 96px 24px 96px 24px;
+}
 .hero-logo{ margin-bottom: 24px; }
 .hero-logo-svg{
   display: inline-block;
@@ -175,7 +235,7 @@ body{
   background: var(--card-bg);
   border: 1px solid var(--card-border);
   border-radius: var(--radius-lg);
-  padding: 22px;
+  padding: 32px 28px 28px 28px;
   box-shadow: var(--card-shadow);
     -webkit-backdrop-filter: blur(6px);
     backdrop-filter: blur(6px);
@@ -190,7 +250,7 @@ body{
   border-radius: 12px;
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.20);
-  margin-bottom: 10px;
+  margin-bottom: 18px;
 }
 .actor-icon{
   width: 56px; height: 56px;
@@ -202,12 +262,12 @@ body{
 }
 
 .card-title{
-  margin: 6px 0 8px;
+  margin: 10px 0 12px;
   font-size: 20px;
   font-weight: 800;
 }
 .card-text{
-  margin: 0;
+  margin: 0 0 4px 0;
   color: var(--muted);
   line-height: 1.6;
 }
@@ -276,4 +336,11 @@ body{
   .grid-2, .grid-3{ grid-template-columns: 1fr; }
   .hero{ padding-top: 84px; }
   .nav{ gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 24px;
 }

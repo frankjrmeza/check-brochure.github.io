@@ -1,14 +1,27 @@
+  section#actores {
+    justify-content: flex-start;
+    padding-top: 120px;
+  }
   section#actores .section-title {
     margin-bottom: 24px;
   }
   section#actores .section-subtitle {
     margin-bottom: 20px;
   }
+  section#flujo {
+    justify-content: flex-start;
+    padding-top: 70px;
+    padding-bottom: 60px;
+  }
   section#flujo .section-title {
-    margin-bottom: 15px;
+    margin-bottom: 10px;
   }
   section#flujo .section-subtitle {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+  }
+  section#solucion {
+    justify-content: flex-start;
+    padding-top: 70px;
   }
   section#solucion .section-title {
     margin-bottom: 15px;
@@ -16,18 +29,29 @@
   section#solucion .section-subtitle {
     margin-bottom: 10px;
   }
+  section#problema .section-title {
+    margin-top: -50px !important;
+  }
+  section#beneficios {
+    justify-content: flex-start;
+    padding-top: 120px;
+  }
 .steps-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 24px;
+  gap: 20px;
+}
+.step-card {
+  padding: 40px 38px;
+  min-height: 280px;
 }
 section#problema {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   min-height: 100vh;
+  padding-top: 120px;
 }
 :root{
   --bg-start: #0F9F6C;
@@ -46,8 +70,9 @@ section#problema {
   --radius-lg: 22px;
   --radius-md: 16px;
   --radius-sm: 10px;
-*{ box-sizing: border-box; }
 }
+*{ box-sizing: border-box; }
+
 html, body{
   height: 100%;
   scroll-behavior: smooth;
@@ -170,13 +195,19 @@ html, body{
   padding: 96px 24px 96px 24px;
 }
 .hero-logo{ margin-bottom: 24px; }
-.hero-logo-svg{
+.hero-logo-img{
   display: inline-block;
   padding: 12px;
   border-radius: 14px;
   background: rgba(255,255,255,0.12);
   border: 1px solid rgba(255,255,255,0.22);
   box-shadow: var(--card-shadow);
+  object-fit: contain;
+}
+.logo img{
+  display: block;
+  object-fit: contain;
+  border-radius: 6px;
 }
 .hero-title{
   margin: 10px auto 12px;
@@ -271,6 +302,14 @@ html, body{
   color: var(--muted);
   line-height: 1.6;
 }
+.step-card .card-title{
+  font-size: 18px;
+  margin: 12px 0 10px;
+}
+.step-card .card-text{
+  font-size: 15px;
+  line-height: 1.5;
+}
 
 .list{
   margin: 10px 0 0 0;
@@ -329,18 +368,15 @@ html, body{
 .footer-inner{ text-align: center; color: var(--muted); }
 
 /* Responsive */
+@media (max-width: 1200px){
+  .steps-grid{ grid-template-columns: repeat(2, 1fr); }
+}
 @media (max-width: 1000px){
   .grid-3{ grid-template-columns: repeat(2, minmax(0,1fr)); }
 }
 @media (max-width: 720px){
   .grid-2, .grid-3{ grid-template-columns: 1fr; }
+  .steps-grid{ grid-template-columns: 1fr; }
   .hero{ padding-top: 84px; }
   .nav{ gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
-}
-
-.steps-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 24px;
 }
